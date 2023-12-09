@@ -1,6 +1,6 @@
-class OnBoardingModel {
+class OnboardingModel {
   String? title;
   String? subtitle;
   String? image;
-  OnBoardingModel(this.title, this.subtitle, this.image);
+  OnboardingModel(this.title, this.subtitle, this.image);
 }
