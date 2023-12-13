@@ -1,4 +1,4 @@
-import 'package:ecommerce_training/core/controllers/onboardig_states.dart';
+import 'package:ecommerce_training/core/controllers/onboarding_cubit/onboarding_states.dart';
 import 'package:ecommerce_training/core/managers/nav.dart';
 import 'package:ecommerce_training/core/network/local/cache_helper.dart';
 import 'package:ecommerce_training/screens/modules/login.dart';

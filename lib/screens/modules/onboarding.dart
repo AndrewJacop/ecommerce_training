@@ -1,4 +1,4 @@
-import 'package:ecommerce_training/core/controllers/onboardig_states.dart';
+import 'package:ecommerce_training/core/controllers/onboarding_cubit/onboarding_states.dart';
 import 'package:ecommerce_training/core/controllers/onboarding_cubit/onboarding_cubit.dart';
 import 'package:ecommerce_training/core/managers/lists.dart';
 import 'package:ecommerce_training/screens/widgets/build_onboarding_item.dart';
@@ -58,7 +58,7 @@ class OnboardingScreen extends StatelessWidget {
                         backgroundColor: Colors.black,
                         buttonWidget: const Text(
                           "Next",
-                          style: TextStyle(color: Colors.black),
+                          style: TextStyle(color: Colors.white),
                         ),
                         function: () {
                           onboardingController.nextPage(
