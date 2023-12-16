@@ -4,7 +4,7 @@ abstract class RegisterState {}
 
 class RegisterInitState extends RegisterState {}
 
-class LoadingRegister extends RegisterState {}
+class RegisterLoading extends RegisterState {}
 
 class RegisterDone extends RegisterState {
   final UserModel userModel;
@@ -13,4 +13,4 @@ class RegisterDone extends RegisterState {
 
 class RegisterError extends RegisterState {}
 
-class ChooseImage extends RegisterState {}
+class RegisterImagePicked extends RegisterState {}

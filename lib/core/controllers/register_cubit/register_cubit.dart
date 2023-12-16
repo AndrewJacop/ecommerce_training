@@ -20,7 +20,7 @@ class RegisterCubit extends Cubit<RegisterState> {
       required phone,
       required nationalId,
       required password}) {
-    emit(LoadingRegister());
+    emit(RegisterLoading());
     DioHelperStore.postData(url: ApiConstants.registerApi, data: {
       "name": name,
       "email": email,
@@ -50,10 +50,11 @@ class RegisterCubit extends Cubit<RegisterState> {
       image = File(pickedFile.path);
       bytes = File(image!.path).readAsBytesSync();
       userImage = base64Encode(bytes!);
-      print('images = $userImage');
-      emit(ChooseImage());
+
+      /// print('images = $userImage');
+      emit(RegisterImagePicked());
     } else {
-      print('no image selected');
+      /// print('no image selected');
     }
   }
 }

@@ -1,7 +1,7 @@
 import 'package:ecommerce_training/core/controllers/onboarding_cubit/onboarding_states.dart';
 import 'package:ecommerce_training/core/managers/nav.dart';
 import 'package:ecommerce_training/core/network/local/cache_helper.dart';
-import 'package:ecommerce_training/screens/modules/login.dart';
+import 'package:ecommerce_training/screens/modules/register.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class OnboardingCubit extends Cubit<OnboardingState> {
@@ -26,6 +26,6 @@ class OnboardingCubit extends Cubit<OnboardingState> {
 
   void submit(context) {
     CacheHelper.saveData(key: 'Boarding', value: true)
-        .then((value) => navigateToNextScreen(context, const LoginScreen()));
+        .then((value) => navigateToNextScreen(context, const RegisterScreen()));
   }
 }

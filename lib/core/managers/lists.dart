@@ -1,5 +1,5 @@
 import 'package:ecommerce_training/core/managers/images.dart';
-import 'package:ecommerce_training/models/onboarding.dart';
+import 'package:ecommerce_training/models/onboarding_model.dart';
 
 List<OnboardingModel> onboardingList = [
   OnboardingModel('title1', 'subtitle1', AppImages.myLogo),

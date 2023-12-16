@@ -1,4 +1,4 @@
-import 'package:ecommerce_training/models/onboarding.dart';
+import 'package:ecommerce_training/models/onboarding_model.dart';
 import 'package:flutter/material.dart';
 
 Widget buildOnboardingItem(OnboardingModel model) => Padding(
