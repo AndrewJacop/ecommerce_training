@@ -1,17 +1,17 @@
-class Laptops{
+class ProductsModel {
   String? status;
   String? message;
   List<Product>? product;
 
-  Laptops({this.status, this.message, this.product});
+  ProductsModel({this.status, this.message, this.product});
 
-  Laptops.fromJson(Map<String, dynamic> json) {
+  ProductsModel.fromJson(Map<String, dynamic> json) {
     status = json['status'];
     message = json['message'];
-    if (json['products'] != null) {
+    if (json['product'] != null) {
       product = <Product>[];
-      json['products'].forEach((v) {
-        product!.add( Product.fromJson(v));
+      json['product'].forEach((v) {
+        product!.add(Product.fromJson(v));
       });
     }
   }
@@ -29,23 +29,21 @@ class Product {
   dynamic countInStock;
   List<String>? images;
   dynamic iV;
-  bool? inCart = false;
-  bool? inFavorite = false;
+  dynamic sales;
 
-  Product(
-      {this.sId,
-        this.status,
-        this.category,
-        this.name,
-        this.price,
-        this.description,
-        this.image,
-        this.company,
-        this.countInStock,
-        this.iV,
-        this.inCart,
-        this.inFavorite,
-      });
+  Product({
+    this.sId,
+    this.status,
+    this.category,
+    this.name,
+    this.price,
+    this.description,
+    this.image,
+    this.company,
+    this.countInStock,
+    this.iV,
+    this.sales,
+  });
 
   Product.fromJson(Map<String, dynamic> json) {
     sId = json['_id'];
@@ -59,8 +57,6 @@ class Product {
     images = json['images'].cast<String>();
     countInStock = json['countInStock'];
     iV = json['__v'];
-    inCart = json['inCart'];
-    inFavorite = json['inFavorites'];
+    sales = json['sales'];
   }
-
 }

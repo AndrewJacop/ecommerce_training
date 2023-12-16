@@ -1,5 +1,6 @@
 import 'package:ecommerce_training/core/controllers/login_cubit/login_cubit.dart';
 import 'package:ecommerce_training/core/controllers/onboarding_cubit/onboarding_cubit.dart';
+import 'package:ecommerce_training/core/controllers/product_cubit/product_cubit.dart';
 import 'package:ecommerce_training/core/controllers/register_cubit/register_cubit.dart';
 import 'package:ecommerce_training/core/managers/values.dart';
 import 'package:ecommerce_training/core/network/local/cache_helper.dart';
@@ -20,17 +21,15 @@ Future<void> main() async {
   await CacheHelper.init();
   // setting the value of boarding bool
   doneBoarding = CacheHelper.getData(key: 'Boarding') ?? false;
-  // setting the nextScreen value
-  nextScreen = doneBoarding
-      ? (doneLogin ? const HomeScreen() : const LoginScreen())
-      : const OnboardingScreen();
-  // setting th token variable
   token = CacheHelper.getData(key: "token") ?? "";
   nationalId = CacheHelper.getData(key: "userId") ?? "";
-
+  // setting the nextScreen value
+  nextScreen = doneBoarding
+      ? (token != "" ? const HomeScreen() : const LoginScreen())
+      : const OnboardingScreen();
   /// print(token);
   /// print(nationalId);
-  // adjusting notification bar icons and its colors
+  // adjusting notification bar icons and its colorsX
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
       statusBarIconBrightness: Brightness.dark));
@@ -57,6 +56,10 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => LoginCubit(),
           lazy: true,
+        ),
+        BlocProvider(
+          create: (context) => ProductCubit()..getHomeProducts(),
+          lazy: false,
         ),
       ],
       child: MaterialApp(
