@@ -11,6 +11,7 @@ import 'package:image_picker/image_picker.dart';
 
 class RegisterCubit extends Cubit<RegisterState> {
   RegisterCubit() : super(RegisterInitState());
+
   static RegisterCubit get(context) => BlocProvider.of(context);
   UserModel? userModel;
 
@@ -44,6 +45,7 @@ class RegisterCubit extends Cubit<RegisterState> {
   File? image;
   Uint8List? bytes;
   String? userImage;
+
   Future<void> addImage() async {
     final pickedFile = await picker.pickImage(source: ImageSource.gallery);
     if (pickedFile != null) {

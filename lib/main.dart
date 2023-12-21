@@ -1,3 +1,4 @@
+import 'package:ecommerce_training/core/controllers/cart_cubit/cart_cubit.dart';
 import 'package:ecommerce_training/core/controllers/login_cubit/login_cubit.dart';
 import 'package:ecommerce_training/core/controllers/onboarding_cubit/onboarding_cubit.dart';
 import 'package:ecommerce_training/core/controllers/product_cubit/product_cubit.dart';
@@ -16,7 +17,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 Future<void> main() async {
   // Force running only after finishing all awaited functions
   WidgetsFlutterBinding.ensureInitialized();
-  // initilizing the network helpers
+  // initializing the network helpers
   DioHelperStore.init();
   await CacheHelper.init();
   // setting the value of boarding bool
@@ -27,6 +28,7 @@ Future<void> main() async {
   nextScreen = doneBoarding
       ? (token != "" ? const HomeScreen() : const LoginScreen())
       : const OnboardingScreen();
+
   /// print(token);
   /// print(nationalId);
   // adjusting notification bar icons and its colorsX
@@ -40,6 +42,7 @@ Future<void> main() async {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
   // This widget is the root of the application.
   @override
   Widget build(BuildContext context) {
@@ -59,6 +62,10 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => ProductCubit()..getHomeProducts(),
+          lazy: false,
+        ),
+        BlocProvider(
+          create: (context) => CartCubit()..getCart(),
           lazy: false,
         ),
       ],

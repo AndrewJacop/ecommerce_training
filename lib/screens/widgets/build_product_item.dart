@@ -1,9 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:ecommerce_training/core/controllers/cart_cubit/cart_cubit.dart';
 import 'package:ecommerce_training/models/product_model.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 Widget buildProductItem(Product product, context) => InkWell(
+      //todo : add product detail screen here
       onTap: () {},
       child: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -59,7 +61,7 @@ Widget buildProductItem(Product product, context) => InkWell(
                                           ),
                                         ),
                                     errorWidget: (context, url, error) {
-                                      print(error.toString());
+                                      /// print(error.toString());
                                       return Center(
                                         child: CircularProgressIndicator(
                                           color: HexColor('#07094D'),
@@ -153,7 +155,10 @@ Widget buildProductItem(Product product, context) => InkWell(
                                           topLeft: Radius.circular(20),
                                           bottomRight: Radius.circular(20))),
                                   child: MaterialButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      CartCubit.get(context)
+                                          .addToCart(product.sId);
+                                    },
                                     child: Text(
                                       'Buy'.toUpperCase(),
                                       style:
