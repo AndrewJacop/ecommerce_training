@@ -24,7 +24,7 @@ class OnboardingCubit extends Cubit<OnboardingState> {
     emit(NotLastPage());
   }
 
-  void submit(context) {
+  void finishOnbording(context) {
     CacheHelper.saveData(key: 'Boarding', value: true)
         .then((value) => navigateToNextScreen(context, const RegisterScreen()));
   }

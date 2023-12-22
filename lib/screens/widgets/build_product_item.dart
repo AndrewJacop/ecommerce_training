@@ -1,12 +1,15 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommerce_training/core/controllers/cart_controller/cart_cubit.dart';
+import 'package:ecommerce_training/core/managers/nav.dart';
 import 'package:ecommerce_training/models/product_model.dart';
+import 'package:ecommerce_training/screens/modules/details.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 Widget buildProductItem(Product product, context) => InkWell(
-      //todo : add product detail screen here
-      onTap: () {},
+      onTap: () {
+        navigateToNextScreen(context, DetailsScreen(product));
+      },
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: SizedBox(

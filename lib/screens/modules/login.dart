@@ -22,6 +22,7 @@ class LoginScreen extends StatelessWidget {
         if (state is LoginDone) {
           if (state.userModel.status == "success") {
             /// print(state.userModel.message);
+            //showToast(state.userModel.message!, ToastStates.SUCCESS);
             /// print(state.userModel.user!.token);
             CacheHelper.saveData(
                     key: 'userId', value: state.userModel.user!.nationalId)
@@ -108,6 +109,7 @@ class LoginScreen extends StatelessWidget {
                                 password: passwordController.text,
                               );
                             }
+                            navigateToNextScreen(context, const HomeScreen());
                           }),
                     ]),
               ),
