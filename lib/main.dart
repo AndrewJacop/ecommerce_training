@@ -1,8 +1,9 @@
-import 'package:ecommerce_training/core/controllers/cart_cubit/cart_cubit.dart';
-import 'package:ecommerce_training/core/controllers/login_cubit/login_cubit.dart';
-import 'package:ecommerce_training/core/controllers/onboarding_cubit/onboarding_cubit.dart';
-import 'package:ecommerce_training/core/controllers/product_cubit/product_cubit.dart';
-import 'package:ecommerce_training/core/controllers/register_cubit/register_cubit.dart';
+import 'package:ecommerce_training/core/controllers/cart_controller/cart_cubit.dart';
+import 'package:ecommerce_training/core/controllers/login_controller/login_cubit.dart';
+import 'package:ecommerce_training/core/controllers/onboarding_controller/onboarding_cubit.dart';
+import 'package:ecommerce_training/core/controllers/product_controller/product_cubit.dart';
+import 'package:ecommerce_training/core/controllers/profile_controller/profile_cubit.dart';
+import 'package:ecommerce_training/core/controllers/register_controller/register_cubit.dart';
 import 'package:ecommerce_training/core/managers/values.dart';
 import 'package:ecommerce_training/core/network/local/cache_helper.dart';
 import 'package:ecommerce_training/core/network/remote/dio_helper.dart';
@@ -66,6 +67,10 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => CartCubit()..getCart(),
+          lazy: false,
+        ),
+        BlocProvider(
+          create: (context) => ProfileCubit()..getUserData(),
           lazy: false,
         ),
       ],

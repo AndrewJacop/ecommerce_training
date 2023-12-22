@@ -1,4 +1,4 @@
-import 'package:ecommerce_training/core/controllers/cart_cubit/cart_cubit.dart';
+import 'package:ecommerce_training/core/controllers/cart_controller/cart_cubit.dart';
 import 'package:ecommerce_training/models/cart_model.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';

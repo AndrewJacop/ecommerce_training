@@ -1,5 +1,5 @@
-import 'package:ecommerce_training/core/controllers/onboarding_cubit/onboarding_states.dart';
-import 'package:ecommerce_training/core/controllers/onboarding_cubit/onboarding_cubit.dart';
+import 'package:ecommerce_training/core/controllers/onboarding_controller/onboarding_states.dart';
+import 'package:ecommerce_training/core/controllers/onboarding_controller/onboarding_cubit.dart';
 import 'package:ecommerce_training/core/managers/lists.dart';
 import 'package:ecommerce_training/screens/widgets/build_onboarding_item.dart';
 import 'package:ecommerce_training/screens/widgets/button.dart';

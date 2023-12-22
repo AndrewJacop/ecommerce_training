@@ -1,5 +1,5 @@
-import 'package:ecommerce_training/core/controllers/register_cubit/register_cubit.dart';
-import 'package:ecommerce_training/core/controllers/register_cubit/register_states.dart';
+import 'package:ecommerce_training/core/controllers/register_controller/register_cubit.dart';
+import 'package:ecommerce_training/core/controllers/register_controller/register_states.dart';
 import 'package:ecommerce_training/core/managers/images.dart';
 import 'package:ecommerce_training/core/managers/nav.dart';
 import 'package:ecommerce_training/core/managers/values.dart';

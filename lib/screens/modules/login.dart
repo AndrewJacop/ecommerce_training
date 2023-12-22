@@ -1,5 +1,5 @@
-import 'package:ecommerce_training/core/controllers/login_cubit/login_cubit.dart';
-import 'package:ecommerce_training/core/controllers/login_cubit/login_states.dart';
+import 'package:ecommerce_training/core/controllers/login_controller/login_cubit.dart';
+import 'package:ecommerce_training/core/controllers/login_controller/login_states.dart';
 import 'package:ecommerce_training/core/managers/nav.dart';
 import 'package:ecommerce_training/core/managers/values.dart';
 import 'package:ecommerce_training/core/network/local/cache_helper.dart';

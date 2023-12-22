@@ -1,5 +1,5 @@
-import 'package:ecommerce_training/core/controllers/product_cubit/product_cubit.dart';
-import 'package:ecommerce_training/core/controllers/product_cubit/product_states.dart';
+import 'package:ecommerce_training/core/controllers/product_controller/product_cubit.dart';
+import 'package:ecommerce_training/core/controllers/product_controller/product_states.dart';
 import 'package:ecommerce_training/core/managers/nav.dart';
 import 'package:ecommerce_training/screens/modules/cart.dart';
 import 'package:ecommerce_training/screens/modules/profile.dart';

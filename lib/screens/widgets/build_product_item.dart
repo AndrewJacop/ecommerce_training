@@ -1,5 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:ecommerce_training/core/controllers/cart_cubit/cart_cubit.dart';
+import 'package:ecommerce_training/core/controllers/cart_controller/cart_cubit.dart';
 import 'package:ecommerce_training/models/product_model.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';

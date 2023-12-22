@@ -1,5 +1,5 @@
-import 'package:ecommerce_training/core/controllers/cart_cubit/cart_cubit.dart';
-import 'package:ecommerce_training/core/controllers/cart_cubit/cart_states.dart';
+import 'package:ecommerce_training/core/controllers/cart_controller/cart_cubit.dart';
+import 'package:ecommerce_training/core/controllers/cart_controller/cart_states.dart';
 import 'package:ecommerce_training/screens/widgets/build_cart_item.dart';
 import 'package:ecommerce_training/screens/widgets/button.dart';
 import 'package:flutter/material.dart';

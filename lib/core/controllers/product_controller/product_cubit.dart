@@ -1,4 +1,4 @@
-import 'package:ecommerce_training/core/controllers/product_cubit/product_states.dart';
+import 'package:ecommerce_training/core/controllers/product_controller/product_states.dart';
 import 'package:ecommerce_training/core/network/constant.dart';
 import 'package:ecommerce_training/core/network/remote/dio_helper.dart';
 import 'package:ecommerce_training/models/product_model.dart';

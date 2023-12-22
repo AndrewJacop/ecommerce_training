@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
 
-import 'package:ecommerce_training/core/controllers/register_cubit/register_states.dart';
+import 'package:ecommerce_training/core/controllers/register_controller/register_states.dart';
 import 'package:ecommerce_training/core/network/constant.dart';
 import 'package:ecommerce_training/core/network/remote/dio_helper.dart';
 import 'package:ecommerce_training/models/user_model.dart';
