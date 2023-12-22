@@ -1,5 +1,7 @@
 import 'package:ecommerce_training/core/controllers/cart_controller/cart_cubit.dart';
+import 'package:ecommerce_training/core/controllers/details_controller/details_cubit.dart';
 import 'package:ecommerce_training/core/controllers/login_controller/login_cubit.dart';
+import 'package:ecommerce_training/core/controllers/observer.dart';
 import 'package:ecommerce_training/core/controllers/onboarding_controller/onboarding_cubit.dart';
 import 'package:ecommerce_training/core/controllers/product_controller/product_cubit.dart';
 import 'package:ecommerce_training/core/controllers/profile_controller/profile_cubit.dart';
@@ -37,8 +39,33 @@ Future<void> main() async {
       statusBarColor: Colors.transparent,
       statusBarIconBrightness: Brightness.dark));
   // testing out the bloc cubit
-  /// Bloc.observer = MyBlocObserver();
+  Bloc.observer = MyBlocObserver();
   runApp(const MyApp());
+
+  /// WidgetsFlutterBinding.ensureInitialized();
+  /// DioHelperStore.init();
+  /// await CacheHelper.init();
+  /// var boarding = CacheHelper.getData(key: 'Boarding');
+  /// token = CacheHelper.getData(key: 'token');
+  /// nationalId = CacheHelper.getData(key: 'userId');
+  /// print(token);
+  /// print(nationalId);
+  /// print(boarding);
+  /// if (boarding == true) {
+  ///   if (token != null) {
+  ///     nextScreen = const HomeScreen();
+  ///   } else {
+  ///     nextScreen = const RegisterScreen();
+  ///   }
+  /// } else {
+  ///   nextScreen = const OnboardingScreen();
+  /// }
+  /// SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+  ///   statusBarColor: Colors.transparent,
+  ///   statusBarIconBrightness: Brightness.dark,
+  /// ));
+  /// Bloc.observer = MyBlocObserver();
+  /// runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -72,6 +99,10 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => ProfileCubit()..getUserData(),
           lazy: false,
+        ),
+        BlocProvider(
+          create: (context) => DetailsCubit(),
+          lazy: true,
         ),
       ],
       child: MaterialApp(

@@ -51,7 +51,7 @@ class OnboardingScreen extends StatelessWidget {
                           style: TextStyle(color: Colors.white),
                         ),
                         function: () {
-                          cubit.submit(context);
+                          cubit.finishOnbording(context);
                         },
                       )
                     : DefaultButton(

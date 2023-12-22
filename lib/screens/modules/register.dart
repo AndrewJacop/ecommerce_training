@@ -26,7 +26,7 @@ class RegisterScreen extends StatelessWidget {
       if (state is RegisterDone) {
         if (state.userModel.status == "success") {
           /// print(state.userModel.message);
-          /// showToast(state.userModel.message!, ToastStates.SUCCESS);
+          //showToast(state.userModel.message!, ToastStates.SUCCESS);
           /// print(state.userModel.user!.token);
           CacheHelper.saveData(
                   key: 'userId', value: state.userModel.user!.nationalId)
@@ -44,7 +44,7 @@ class RegisterScreen extends StatelessWidget {
             );
           });
         } else {
-          print(state.userModel.message);
+          /// print(state.userModel.message);
         }
       }
     }, builder: (context, state) {
