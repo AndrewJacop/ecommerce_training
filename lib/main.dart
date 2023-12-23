@@ -1,5 +1,5 @@
 import 'package:ecommerce_training/core/controllers/cart_controller/cart_cubit.dart';
-import 'package:ecommerce_training/core/controllers/details_controller/details_cubit.dart';
+import 'package:ecommerce_training/core/controllers/favourite_controller/favourite_cubit.dart';
 import 'package:ecommerce_training/core/controllers/login_controller/login_cubit.dart';
 import 'package:ecommerce_training/core/controllers/observer.dart';
 import 'package:ecommerce_training/core/controllers/onboarding_controller/onboarding_cubit.dart';
@@ -24,9 +24,12 @@ Future<void> main() async {
   DioHelperStore.init();
   await CacheHelper.init();
   // setting the value of boarding bool
-  doneBoarding = CacheHelper.getData(key: 'Boarding') ?? false;
-  token = CacheHelper.getData(key: "token") ?? "";
-  nationalId = CacheHelper.getData(key: "userId") ?? "";
+  /// doneBoarding = CacheHelper.getData(key: 'Boarding') ?? false;
+  /// token = CacheHelper.getData(key: "token") ?? "";
+  /// nationalId = CacheHelper.getData(key: "userId") ?? "";
+  doneBoarding = true;
+  token = "p26uldmewrplq5cx6zm";
+  nationalId = "30202060101742";
   // setting the nextScreen value
   nextScreen = doneBoarding
       ? (token != "" ? const HomeScreen() : const LoginScreen())
@@ -101,13 +104,13 @@ class MyApp extends StatelessWidget {
           lazy: false,
         ),
         BlocProvider(
-          create: (context) => DetailsCubit(),
-          lazy: true,
+          create: (context) => FavouriteCubit()..getFavorite(),
+          lazy: false,
         ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
+        title: 'E-Commerce',
         theme: lightTheme,
         home: nextScreen,
       ),

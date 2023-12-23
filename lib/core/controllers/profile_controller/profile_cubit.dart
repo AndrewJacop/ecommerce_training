@@ -23,7 +23,7 @@ class ProfileCubit extends Cubit<ProfileState> {
   }
 
   void updateUserData({String? name, String? phone, String? email}) {
-    DioHelperStore.putData(url: ApiConstants.userProfileApi, data: {
+    DioHelperStore.putData(url: ApiConstants.userUpdateApi, data: {
       "name": name,
       "email": email,
       "phone": phone,

@@ -9,7 +9,11 @@ class DetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Details")),
+      backgroundColor: Colors.grey[300],
+      appBar: AppBar(
+        title: const Text("Details"),
+        backgroundColor: Colors.grey[300],
+      ),
       body: buildDetailsItem(product, context),
     );
   }

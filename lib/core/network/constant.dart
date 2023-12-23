@@ -9,4 +9,6 @@ class ApiConstants {
   static String deleteCartApi = "$baseUrl/cart/delete";
   static String updateCartApi = "$baseUrl/cart";
   static String userProfileApi = "$baseUrl/user/profile";
+  static String userUpdateApi = "$baseUrl/user/update";
+  static String favoriteApi = "$baseUrl/favorite";
 }

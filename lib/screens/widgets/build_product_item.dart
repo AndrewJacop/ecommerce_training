@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommerce_training/core/controllers/cart_controller/cart_cubit.dart';
+import 'package:ecommerce_training/core/controllers/favourite_controller/favourite_cubit.dart';
 import 'package:ecommerce_training/core/managers/nav.dart';
 import 'package:ecommerce_training/models/product_model.dart';
 import 'package:ecommerce_training/screens/modules/details.dart';
@@ -73,6 +74,24 @@ Widget buildProductItem(Product product, context) => InkWell(
                                     }),
                               ),
                             ),
+                            InkWell(
+                              onTap: () {
+                                FavouriteCubit.get(context)
+                                    .addFavorite(product.sId);
+                              },
+                              child: Padding(
+                                padding: const EdgeInsets.all(10.0),
+                                child: CircleAvatar(
+                                  backgroundColor: HexColor('#BFC0E4'),
+                                  radius: 10,
+                                  child: const Icon(
+                                    Icons.favorite,
+                                    size: 15,
+                                    color: Colors.red,
+                                  ),
+                                ),
+                              ),
+                            )
                           ],
                         ),
                       )

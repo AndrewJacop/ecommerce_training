@@ -2,6 +2,7 @@ import 'package:ecommerce_training/core/controllers/product_controller/product_c
 import 'package:ecommerce_training/core/controllers/product_controller/product_states.dart';
 import 'package:ecommerce_training/core/managers/nav.dart';
 import 'package:ecommerce_training/screens/modules/cart.dart';
+import 'package:ecommerce_training/screens/modules/favourite.dart';
 import 'package:ecommerce_training/screens/modules/profile.dart';
 import 'package:ecommerce_training/screens/widgets/build_product_item.dart';
 import 'package:flutter/material.dart';
@@ -30,7 +31,7 @@ class HomeScreen extends StatelessWidget {
               child: ListView(children: [
             ListTile(
               title: const Text('Cart'),
-              leading: const Icon(Icons.person),
+              leading: const Icon(Icons.shopping_cart),
               onTap: () {
                 navigateToNextScreen(context, const CartScreen());
               },
@@ -40,6 +41,13 @@ class HomeScreen extends StatelessWidget {
               leading: const Icon(Icons.person),
               onTap: () {
                 navigateToNextScreen(context, const ProfileScreen());
+              },
+            ),
+            ListTile(
+              title: const Text('Favourite'),
+              leading: const Icon(Icons.favorite),
+              onTap: () {
+                navigateToNextScreen(context, const FavouriteScreen());
               },
             ),
           ])),
