@@ -24,12 +24,13 @@ Future<void> main() async {
   DioHelperStore.init();
   await CacheHelper.init();
   // setting the value of boarding bool
-  /// doneBoarding = CacheHelper.getData(key: 'Boarding') ?? false;
-  /// token = CacheHelper.getData(key: "token") ?? "";
-  /// nationalId = CacheHelper.getData(key: "userId") ?? "";
-  doneBoarding = true;
-  token = "p26uldmewrplq5cx6zm";
-  nationalId = "30202060101742";
+  doneBoarding = CacheHelper.getData(key: 'Boarding') ?? false;
+  token = CacheHelper.getData(key: "token") ?? "";
+  nationalId = CacheHelper.getData(key: "userId") ?? "";
+
+  /// doneBoarding = true;
+  /// token = "p26uldmewrplq5cx6zm";
+  /// nationalId = "30202060101742";
   // setting the nextScreen value
   nextScreen = doneBoarding
       ? (token != "" ? const HomeScreen() : const LoginScreen())
